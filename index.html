@@ -6,6 +6,40 @@
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>Rock, Paper, Scissors</h1>
+      <em>Enjoy your game!!!</em>
+      <div class="buttons">
+        <button type="button" class="selection-button" data-selection="Rock">
+          Rock 🪨
+        </button>
+        <button type="button" class="selection-button" data-selection="Paper">
+          Paper 📃
+        </button>
+        <button
+          type="button"
+          class="selection-button"
+          data-selection="Scissors"
+        >
+          Scissors ✂️
+        </button>
+      </div>
+      <div class="display">
+        <div class="selections">
+          <p>You: <span class="human"></span></p>
+          <p>Computer: <span class="computer"></span></p>
+        </div>
+        <div class="scores">
+          <p>Your score: <span class="human-score">0</span></p>
+          <p>Computer score: <span class="computer-score">0</span></p>
+        </div>
+      </div>
+      <div class="message-div">
+        <p class="message"></p>
+      </div>
+      <button type="button" class="reset">Reset ♻️</button>
+    </div>
+  </body>
   <script src="scripts.js"></script>
 </html>

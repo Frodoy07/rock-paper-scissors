@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+em {
+  display: inline-block;
+  padding: 20px 0;
+}
+
+.reset {
+  display: none;
+}
