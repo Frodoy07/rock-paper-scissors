@@ -10,16 +10,6 @@ const resetButton = document.querySelector(".reset");
 let computerScore = 0;
 let humanScore = 0;
 
-const getComputerChoice = function () {
-  const choice = {
-    1: "Rock",
-    2: "Paper",
-    3: "Scissors",
-  };
-
-  return choice[Math.floor(Math.random() * 3) + 1];
-};
-
 const playRound = function (humanChoice, computerChoice) {
   humanSelectionDisplay.textContent = humanChoice;
   computerSelectionDisplay.textContent = computerChoice;
@@ -34,7 +24,7 @@ const playRound = function (humanChoice, computerChoice) {
     humanScoreDisplay.textContent = humanScore;
     endGame();
   } else if (humanChoice === computerChoice) {
-    message.textContent = "Oops choices are the same, Try again!";
+    message.textContent = "Oops! choices are the same, Try again!";
   } else {
     message.textContent = `You lose! ${computerChoice} beat ${humanChoice} 😁`;
     computerScore++;
@@ -67,12 +57,15 @@ const newRound = function () {
   resetButton.style.display = "block";
 };
 
-selectionButtons.forEach((e) => {
-  e.addEventListener("click", () => {
-    const computerSelection = getComputerChoice();
-    playRound(e.dataset.selection, computerSelection);
-  });
-});
+const getComputerChoice = function () {
+  const choice = {
+    1: "Rock",
+    2: "Paper",
+    3: "Scissors",
+  };
+
+  return choice[Math.floor(Math.random() * 3) + 1];
+};
 
 function endGame() {
   if (humanScore === 5 || computerScore === 5) {
@@ -87,3 +80,16 @@ function endGame() {
     return;
   }
 }
+
+const init = function () {
+  message.textContent = " ";
+
+  selectionButtons.forEach((e) => {
+    e.addEventListener("click", () => {
+      const computerSelection = getComputerChoice();
+      playRound(e.dataset.selection, computerSelection);
+    });
+  });
+};
+
+init();
